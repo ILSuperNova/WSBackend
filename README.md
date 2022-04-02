@@ -7,7 +7,7 @@
  * Have Node v16 or higher installed for better use
 
 ```bash
-$ git clone {THIS_REPO_URL} server
+$ git clone https://github.com/ILSuperNova/WSBackend server
 $ cd server
 ```
 Install dependencies and devDependencies:
