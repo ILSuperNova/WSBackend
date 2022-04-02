@@ -33,3 +33,7 @@ $ yarn start:watch
 ```
 
   View the APIs at: http://localhost:4003
+
+# Postman
+
+Download and import the provided postman collection [./Backend.postman_collection.json]
