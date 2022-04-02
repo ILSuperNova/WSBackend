@@ -36,4 +36,4 @@ $ yarn start:watch
 
 # Postman
 
-Download and import the provided postman collection [./Backend.postman_collection.json]
+Download and import the provided [postman collection](Backend.postman_collection.json)
