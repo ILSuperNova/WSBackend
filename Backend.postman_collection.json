@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\" : \"liron.sher@gmail.com\",\n    \"password\": \"Test123\"\n}",
+							"raw": "{\n    \"email\" : \"lironsher@gmail.com\",\n    \"password\": \"Test123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -46,7 +46,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"name\" : \"Liron Sher\",\n    \"email\" : \"liron.sher@gmail.com\",\n    \"phoneNumber\" : \"+972545442258\",\n    \"password\": \"Test123\",\n    \"password_confirm\" : \"Test123\"\n}",
+							"raw": "{\n    \"name\" : \"Leo Sher\",\n    \"email\" : \"lironsher@gmail.com\",\n    \"phoneNumber\" : \"+972545442258\",\n    \"password\": \"Test123\",\n    \"password_confirm\" : \"Test123\",\n    \"country\" : \"israel\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -92,7 +92,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n   \"communityId\": \"6248432a9086182c22aac503\",\n   \"title\": \"My First Post\",\n   \"body\" : \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel sodales ante, vitae finibus mauris. In quis sodales erat. Quisque faucibus venenatis mi. Donec congue maximus lectus. Nunc nec augue ac felis placerat congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas eu euismod orci. Vestibulum congue magna quis nulla accumsan, a lobortis augue placerat. Integer pulvinar non nibh ac lobortis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus feugiat mauris, id dignissim mi sodales vel. Aenean sit amet egestas ipsum.\"\n}",
+							"raw": "{\n   \"communityId\": \"6248432a9086182c22aac503\",\n   \"title\": \"My First Post fuck\",\n   \"body\" : \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel efficitur diam. Cras ut justo ac ex sollicitudin tristique at nec dui. Sed eget lacus eget arcu porttitor pulvinar sed volutpat arcu. Etiam consectetur leo tortor, eget pharetra lacus tristique eu. Suspendisse congue pharetra velit. Aliquam feugiat finibus euismod. Sed nec tincidunt nunc. Vestibulum eu eleifend mi. Aliquam in tempor sem, feugiat facilisis lectus. Nulla rutrum posuere nulla, vel tincidunt lorem pulvinar eu. Sed sollicitudin, neque nec dapibus ornare, neque augue egestas enim, sit amet posuere nibh nibh eget urna. Quisque bibendum est id augue sagittis pharetra. In malesuada, eros a ornare molestie, velit nisi tincidunt diam, in vestibulum purus nulla eu ipsum. Suspendisse potenti. Duis eget mi quis turpis.3333 333 333 333 333 333 333 333 333 333 33 3\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -117,6 +117,9 @@
 				},
 				{
 					"name": "feed",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
@@ -128,7 +131,7 @@
 								}
 							]
 						},
-						"method": "POST",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
@@ -140,7 +143,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4003/api/v1/post",
+							"raw": "http://localhost:4003/api/v1/post/feed",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -149,7 +152,8 @@
 							"path": [
 								"api",
 								"v1",
-								"post"
+								"post",
+								"feed"
 							]
 						}
 					},
@@ -163,8 +167,40 @@
 				{
 					"name": "create community",
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQ4MzllOTBjZGE5OTc3OTQyOTQxZjIiLCJuYW1lIjoiTGlyb24gU2hlciIsImNyZWF0ZWRBdCI6MTY0ODkwMjI0OTQxNywiaWF0IjoxNjQ4OTAyMjQ5LCJleHAiOjE2ODA0NTk4NDl9.YMBcBTBOsHfecoRXkezAduk5kbhTgQcDb5oAC5xEmIc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Divorce\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4003/api/v1/community",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4003",
+							"path": [
+								"api",
+								"v1",
+								"community"
+							]
+						}
 					},
 					"response": []
 				}
